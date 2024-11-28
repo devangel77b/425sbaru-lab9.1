@@ -1,0 +1,26 @@
+This is a review of the manuscriput by Baru et al "Mapping electric field and potential". The paper observed and analyzed the rate of change of potential around conducting wires as well as finding equipotential regions. I recommend major revisions. The major flaws are that they do not show potential or electric field or equipotentials for their data and that they dont realy explain what is happening around the conducting wires they teased in the abstract. 
+
+Title: The authors should give a title that does not just sound like a physics lab exercise from a class. Also, the author list should not have the indiviudal manuscript contributions, those go in the acknowledgements, e.g. "SB worked on the manuscript; PT did the diagrams and wokred on the measurements... etc"
+
+Abstract: The abstract is OK but should relate the work to a device, application, or testable hypothesis. Keywords are needed.
+
+Introduction: The authors make very brief mention of an application to a low cost electrophoresis rig without defining what such a thing does or what it needs in way of electrical technology or analysis.
+
+When they mention salt (presumable NaCl, what molar? what concentration) they appear to be setting up that they are really observing J=\sigma E but then do not address this at all again.
+
+It is confusing when they authors say the field or voltage will be "constant". These are most definitely not constant in space (based on the authors own un-numbered drawing), but also the authors are measuring in an electrostatic situation where there is no time dependence so what do they mean?
+
+The drawing of the field lines between two charges appears to be a prediction of sorts but was this created by the authors or gahtered from the internet? If the latter it needs to be cited. It would be strong if it was an actual prediction of their actual geometry but it does not appear this is the case.
+
+Methods and materials: the methods should be written in past tense prose an dshould not sound like a recipe cook book of imperative steps. Trivial details should be skipped while more detail is needed on things like what meter, what power supply, etc that a skilled engineer might need to know to replicate their measurements. The setup figure needs a caption and needs to be numbered as Fig (2) (or whatever).
+
+Results: It appears that the resuls are given in several diagrams but these are unclear and take up very much space without really giving the reader an easy way to read them or make sense of the findings. The authors should provide a more normal plot of the equipotentials and the electric field. When they do actually provide these in the table (not numbered) it is unclear how they computed V/cm as these are not in the methods. Similarly the plots after this are unlabeled, do not label axes or units, and it is unclear if these are V or E field or what. There was nothing showing the relationship between V and E field.
+
+Discussion: It is very hard to interpret the authors discussion because the results have so many holes. For example they claim "the tested rate of change of potential was a little off" but what does this even mean?
+
+The final part of the discussion should answer "So what? What do your findings mean for science or engineering, for the design of ____, or for methods we can use in the general field of ____." There is no such broader impact given currently. 
+
+No references are given.
+
+
+
