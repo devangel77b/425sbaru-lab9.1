@@ -16,6 +16,7 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{mhchem}
+\usepackage{svg}
 
 \title{Demonstrating a Method to Create a Low-cost Electrophoresis Rig Solution\\}
 \author{Srikar Baru\thanks{Author for correspondence: 426sbaru@frhsd.com}, Vikram Choudhury, Pooja Thaker, Nathan Martin, and Danyal Ahmad\thanks{Authors are with the Science \& Engineering Magnet Program, Manalapan High School, 20 Church Lane, Englishtown, NJ 07726}}
@@ -48,13 +49,11 @@ We observed and analyzed the potential and electric field in a saltwater solutio
 
 
 \section{Introduction}%(Background Information and Theory):}
-\IEEEPARstart{D}{ifferent particles} will settle at different regions in a solution based on their size and charge (negative charged particles will rest at higher potential regions and positive charged particles will rest at lower potential regions). An electrophoresis rig separates particles based on size and charge by having equipotential regions that different particles will settle at. A solution that is very conductive is needed to create a good separation between different particles. Table salt (\ce{NaCl}) breaks down into its ions (\ce{Na^+} and \ce{Cl^-}) in water, allowing for a high conductivity as the ions are free to carry charge in the solution. This allows for a higher current density by the equation $\vec{J} = \sigma \vec{E}$, where $\vec{J}$ is current density, $\sigma$ is conductivity of the material (very high for saltwater), and $\vec{E}$ is the electric field, which allows for clearer voltage differences across the rig as a higher current means a higher voltage by Ohm’s law.  
+\IEEEPARstart{D}{ifferent particles} will settle at different regions in a solution based on their size and charge (negative charged particles will rest at higher potential regions and positive charged particles will rest at lower potential regions). An electrophoresis rig separates particles based on size and charge by having equipotential regions that different particles will settle at. A solution that is very conductive is needed to create a good separation between different particles. Salt (\ce{NaCl}) dissociates into its ions (\ce{Na^+} and \ce{Cl^-}) in water, allowing for a high conductivity as the ions are free to carry charge in the aqueous solution. This allows for a higher current density by the equation $\vec{J} = \sigma \vec{E}$, where $\vec{J}$ is current density, $\sigma$ is conductivity of the material (very high for saltwater), and $\vec{E}$ is the electric field, which allows for clearer voltage differences across the rig as a higher current means a higher voltage by Ohm’s law.  
 
-Placing a fixed positive charge (The positive terminal of a power supply) and a fixed negative charge(The ground terminal of a power supply) into this saltwater will create an electric field. This field will not be constant(it will be maximized close to each charge and minimized at the point exactly between them) and will never be zero between the two charges (both charges' electric fields are never in opposition in the region between them). Since $V=\int\vec{E}\cdot d\vec{s}$, there will be a potential gradient (since E is never 0) and this potential gradient will change inconsistently (as E is not constant in the solution). 
+Placing a fixed positive charge (The positive terminal of a power supply) and a fixed negative charge(The ground terminal of a power supply) into this saltwater will create an electric field. This field will not be constant(it will be maximized close to each charge and minimized at the point exactly between them) and will never be zero between the two charges (both charges' electric fields are never in opposition in the region between them). Since $V=\int\vec{E}\cdot d\vec{s}$, there will be a potential gradient (since $\vec{E}$ is never 0) and this potential gradient will change inconsistently (as $\vec{E}$ is not constant in the solution). 
 
-Certain points in this gradient will have the same potential, these points are considered to have equipotential. A region of these points is called an equipotential region and will run perpendicular to the net electric field. 
-
-In this case, they should follow this pattern:
+Certain points in this gradient will have the same potential, these points are considered to have equipotential. A region of these points is called an equipotential region and will run perpendicular to the net electric field. In this case, they should follow the pattern shown in \cref{fig:1}.
 \begin{figure}
 \begin{center}
 %\includegraphics[width=.9\linewidth]{fig1.JPG}
@@ -63,7 +62,6 @@ In this case, they should follow this pattern:
 \caption{Electric field (red) and equipotential (black) lines for a dipole configuration with positive and negative charges spaced by a short distance. From \cite{ling-2016-university}.}
 \label{fig:1}
 \end{figure}
-
 For our purposes, we can measure the potential difference from a set point to a number of points in a region to check if that area is an equipotential region(or line).
 
 
@@ -77,13 +75,22 @@ For our purposes, we can measure the potential difference from a set point to a 
 
 \section{Methods and Materials}
 
-To carry out this experiment, the following materials were utilized: a 5 feet by 8 feet whiteboard, a marker of any distinct color (red was used for the following trials), two wires with clasps at the ends, \qty{500}{\milli\liter} of water, a clear container with a base measuring \qtyproduct{10x10}{\centi\meter}, and a pinch of salt. We set up this lab by pouring the water into the container and then mixing it in the salt to induce a higher conductivity within the water. We then attached each of the  wires to the positive and negative ends of the power supply, ensuring that they were on opposite sides of the container. On a whiteboard, we drew a graph of dimensions \qtyproduct{20x20}{\centi\meter}, aligning the container of saltwater’s corners with the vertices of the graph. We then measured the potential difference at each of the points marked by the graph that the power supply output. This was repeated with the power supply set to \qtylist{3;6;9}{\volt}, testing each point at its respective voltage.  Additionally, note that points 2, 5, and 8 serve as the baseline for potential (they have neutral (\qty{0}{\volt}) potential) throughout the experiment. Following this, we computed the rate of change in potential along each path by dividing the difference between the electric potential at the start and end point of each path and dividing it by the length of the path, resulting in a value that is measured in volts per centimeter (\unit{\volt\per\centi\meter}).
+We used a clear 3-cup polypropylene food container (EasyFind; Rubbermaid; Atlanta, GA), \qty{500}{\milli\liter} of tap water, and a pinch of salt to create an aqueous solution with sufficient conductivity for experiments. Voltage was applied using a power supply and two alligator leads, clipped to the side of the container using large size binder clips in the positions shown in \cref{fig:2}. A \qtyproduct{20x20}{\centi\meter} measurement grid was then drawn on a whiteboard placed beneath the container, with dots marking 11 measurement points within a \qtyproduct{10x10}{\centi\meter} area, as shown in \cref{fig:2}. With the power supply adjusted to provide \qty{3}{\volt} applied voltage, we measured the potential at each of the 11 measurement points. This was repeated for applied voltages \qtylist{3;6;9}{\volt}. For our measurements, we took the vertical midline (points 2, 5, and 8) as ground (\qty{0}{\volt}). 
+
+To estimate electric field in the $x$ direction along the horizontal midline, we took finite differences between measurement points 4--8, using $dx=\qty{2.5}{\centi\meter}$ between each, e.g.:
+\begin{equation}
+| E_{x,4-5} | = \dfrac{V_5 - V_4}{dx} 
+\label{eq:fdm}
+\end{equation}
+and similarly for points 5-6, 6-7, and 7-8. 
+
+%To carry out this experiment, the following materials were utilized: a 5 feet by 8 feet whiteboard, a marker of any distinct color (red was used for the following trials), two wires with clasps at the ends, \qty{500}{\milli\liter} of water, a clear container with a base measuring \qtyproduct{10x10}{\centi\meter}, and a pinch of salt. We set up this lab by pouring the water into the container and then mixing it in the salt to induce a higher conductivity within the water. We then attached each of the  wires to the positive and negative ends of the power supply, ensuring that they were on opposite sides of the container. On a whiteboard, we drew a graph of dimensions \qtyproduct{20x20}{\centi\meter}, aligning the container of saltwater’s corners with the vertices of the graph. We then measured the potential difference at each of the points marked by the graph that the power supply output. This was repeated with the power supply set to \qtylist{3;6;9}{\volt}, testing each point at its respective voltage.  Additionally, note that points 2, 5, and 8 serve as the baseline for potential (they have neutral (\qty{0}{\volt}) potential) throughout the experiment. Following this, we computed the rate of change in potential along each path by dividing the difference between the electric potential at the start and end point of each path and dividing it by the length of the path, resulting in a value that is measured in volts per centimeter (\unit{\volt\per\centi\meter}).
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=1\linewidth]{Fig2.png}
 \end{center}
-\caption{Experimental setup. Tub of water depicted on right, voltmeter (blue/white) and power supply (green) on the left.}
+\caption{Experimental setup. Tub of water depicted on right, voltmeter (blue/white) and power supply (green) on the left. Vertical midline points 2, 6, and 8 were taken as ground while horizontal midline points 4--8 were used to compute the electric field strength using finite differences, \cref{eq:fdm}.}
 \label{fig:2}
 \end{figure}
 
@@ -99,39 +106,52 @@ To carry out this experiment, the following materials were utilized: a 5 feet by
 
 
 \section{Results}
-\Cref{fig:3,fig:4,fig:5} show the measured potentials for three different applied voltages, \qtylist{3;4;5}{\volt}. 
+\Cref{fig:3,fig:4,fig:5} show the measured potentials for three different applied voltages, \qtylist{3;6;9}{\volt}. 
 \begin{figure}
 \begin{center}
-image missing
+%image missing
 %\includegraphics[width=.8\linewidth]{Screenshot 2024-11-30 at 7.07.04 PM.png}
+%\includesvg[width=0.8\columnwidth]{Fig 3.svg}
+\includegraphics[width=0.75\columnwidth]{Fig 3.png}
 \end{center}
-\caption{}
+\caption{Measured potentials for \qty{3}{\volt} applied voltage shown at each test point. The test points are numbered 1--11 in \cref{fig:2}. Positive and negative electrodes are located at the red plus and black minus signs, respectively.}
 \label{fig:3}
 \end{figure}
-
 \begin{figure}
 \begin{center}
-image missing
+%image missing
 %\includegraphics[width=.8\linewidth]{Screenshot 2024-11-30 at 7.00.34 PM.png}
+%\includesvg[width=0.8\columnwidth]{Fig 4.svg}
+\includegraphics[width=0.75\columnwidth]{Fig 4.png}
 \end{center}
-\caption{}
+\caption{Measured potentials for \qty{6}{\volt} applied voltage shown at each test point.}
 \label{fig:4}
 \end{figure}
-
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.8\linewidth]{figs3thru5fix.JPG}
+%\includegraphics[width=0.8\linewidth]{figs3thru5fix.JPG}
+%\includesvg[width=0.8\columnwidth]{Fig 5.svg}
+\includegraphics[width=0.75\columnwidth]{Fig 5.png}
 \end{center}
-\caption{Measured potentials for \qty{6}{\volt} applied voltage shown ate each test point. The test points are numbered 1--11 in \cref{fig:2}. Positive and negative electrodes are located at the red plus and black minus signs, respectively.}
+\caption{Measured potentials for \qty{9}{\volt} applied voltage shown at each test point.}
 \label{fig:5}
 \end{figure}
-
-\Cref{tab:1} and \cref{fig:6} show our estimates of the electric field along the center path between the positive and ground terminals. 
+\Cref{tab:1} and \cref{fig:6} show our estimates of the electric field along the center path between the positive and ground terminals obtained from points 4--8 using the finite difference method of \cref{eq:fdm}.  
 \begin{table}
-\caption{Caption here. Rate of change by increments along the center path for multiple voltages}
+\caption{Estimates of electric field strength from the gradient of potential along the center path using finite differences for measurement points 4--8, \cref{eq:fdm}.}
 \label{tab:1}
 \begin{center}
-\includegraphics[width=0.8\linewidth]{table1.JPG}
+%\includegraphics[width=0.8\linewidth]{table1.JPG}
+\begin{tabular}{ccccc}
+\toprule
+ & \multicolumn{4}{c}{$E_x$, (\unit{\volt\per\centi\meter})} \\
+$V_{a}$, (\unit{\volt}) & points 4-5 & points 5-6 & points 6-7 & points 7-8 \\
+\midrule
+9 & 1.40 & 0.80 & 1.20 & 2.60 \\
+6 & 0.86 & 0.44 & 0.76 & 1.54 \\
+3 & 0.28 & 0.12 & 0.26 & 0.54 \\
+\bottomrule
+\end{tabular}
 \end{center}
 \end{table}
 
@@ -139,12 +159,10 @@ image missing
 \begin{center}
 \includegraphics[width=1\linewidth]{fig6.JPG}
 \end{center}
-\caption{Estimating the electric field by examining the gradient of potential along the center path using finite differences along measurement points 4--8.}
+\caption{Estimates of electric field strength from the gradient of potential along the center path using finite differences along measurement points 4--8, \cref{eq:fdm}. Data from \cref{tab:1}.}
 \label{fig:6}
 \end{figure}
 
-% THIS BELONGS IN DISCUSSION (and methods)
-The electric field for this saltwater can be defined by $E=kQ(\frac{0.1}{x^2}+\frac{0.1}{0.1-x^2})$. Between \qtyrange{0}{0.1}{\meter}, The distance between the two terminals,, the maximum values for this equation are found at $x=\qty{0}{\meter}$ and $x = \qty{0.1}{\meter}$; one denominator will be 0 so $|E| = \infty$ at the (singularity) points. The minimum value is found at \qty{0.05}{\meter}, when the denominators are maximized. Thus the tested rate of change makes sense as it follows that type of pattern, though it is odd that the rate of change seems to be much higher at the negative terminal than it is at the positive terminal. This is likely due to a combination of human error and errors with the system. The terminals moved around a bit while we worked, which may have changed the distance between certain points and the terminal, causing odd values. Additionally, the salt in the water may not have dissolved evenly and congregated closer to the negative terminal, increasing the relative electric field in that region since the water would be more conductive.
 
 %Beyond this, we are able to use our data to display the electric fields at each point and form equipotential lines:
 \Cref{fig:7} shows the electric fields at each point and the equipotential lines. 
@@ -156,11 +174,6 @@ The electric field for this saltwater can be defined by $E=kQ(\frac{0.1}{x^2}+\f
 \label{fig:7}
 \end{figure}
 
-% move to discussion
-We can see that, with a small margin of error, the top and bottom left points for each of the different voltages are the same. These form an equipotential line which makes sense as both have the same distance to the positive and ground terminals, so they will both be affected by the terminals electric fields in the same way. This goes for the top and bottom right points and the center line between the terminals for each voltage as well. We can also see that as the left clasp gave off a positive charge and the right clasp gave off a negative charge, the electric fields at each point pointed away from the cathode and gradually started to point more toward the anode as they got closer to it, following the path of electric fields from positive to negative.
-
-% move to discussion
-Though some of the potential values were a little different between supposed equipotential regions, this can be explained by human error. For the same reasons why the tested rate of change for potential was a little off.
 
 
 
@@ -169,7 +182,14 @@ Though some of the potential values were a little different between supposed equ
 
 
 \section{Discussion}
-By analyzing the data, we observed that the rate of change of potential follows what is essentially an inverse quadratic function that has approached infinity at $x=\qty{0}{\meter}$ and $x=\qty{0.1}{\meter}$. This observation aligns with what we expected, as the electric field is the derivative of potential and this is the same form as the electric field for two-point charges. We also identified three equipotential lines located along the paths between the top and bottom right, the top and bottom left, and directly between the two charges. We had a few errors that skewed our data, but did not entirely reject our hypothesis as the areas where we did not make significant errors were extremely consistent with our expected results. These errors mainly had to do with the terminals of the power supply shifting around in the water and possibly with the salt not dissolving evenly in the water, Ideally, the experiment would be conducted with the terminals of the power supply affixed onto the container, as opposed to just being clamped down, and with the water stirred well so that the salt would be fully and evenly dissolved into it. Also a voltmeter with higher precision would be useful, since more exact data is better data. Despite the lack of optimization, this experiment shows that saltwater is a reasonable low cost solution for an electrophoresis rig as it can properly construct equipotential regions.
+% THIS BELONGS IN DISCUSSION (and methods)
+The electric field for this saltwater can be defined by $E=kQ(\frac{0.1}{x^2}+\frac{0.1}{0.1-x^2})$. Between \qtyrange{0}{0.1}{\meter}, the distance between the two terminals, the maximum values for this equation are found at $x=\qty{0}{\meter}$ and $x = \qty{0.1}{\meter}$; one denominator will be 0 so $|E| = \infty$ at the (singularity) points. The minimum value is found at \qty{0.05}{\meter}, when the denominators are maximized. Thus the gradient of potential observed in \cref{tab:1} and \cref{fig:6} makes sense as it follows that type of pattern, though it is odd that the rate of change seems to higher at the negative terminal than it is at the positive terminal (\qty{9}{\volt} data in \cref{tab:1} and \cref{fig:6}). This is likely due to a combination of human error and errors with the system. The terminals moved around a bit while we worked, which may have changed the distance between certain points and the terminal, causing odd values. Additionally, the salt in the water may not have dissolved evenly and congregated closer to the negative terminal, increasing the relative electric field in that region since the water would be more conductive.
+
+% move to discussion
+The equipotential lines sketched in \cref{fig:7} loosely match the shapes predicted for a dipole as shown in \cref{fig:1}. We can see that, with a small margin of error, the top and bottom left points for each of the different voltages are the same. These form an equipotential line which makes sense as both have the same distance to the positive and ground terminals, so they will both be affected by the terminals electric fields in the same way. This goes for the top and bottom right points and the center line between the terminals for each voltage as well. We can also see that as the left clasp gave off a positive charge and the right clasp gave off a negative charge, the electric fields at each point pointed away from the cathode and gradually started to point more toward the anode as they got closer to it, following the path of electric fields from positive to negative. Though some of the potential values were a little different between supposed equipotential regions, this can be explained by human error. For the same reasons why the tested rate of change for potential was a little off.
+
+
+By analyzing the data, we observed that the electric field strength (e.g. see \cref{fig:6}) follows what is essentially an inverse quadratic function that has approached infinity at $x=\qty{0}{\meter}$ and $x=\qty{0.1}{\meter}$ and has a minimum in the middle. This observation aligns with what we expected from theory, as the electric field is the derivative of potential and this is the same form as the electric field for two-point charges. We also identified three equipotential lines located along the paths between the top and bottom right, the top and bottom left, and directly between the two charges. We had a few errors that skewed our data, but did not entirely reject our hypothesis as the areas where we did not make significant errors were extremely consistent with our expected results. These errors mainly had to do with the terminals of the power supply shifting around in the water and possibly with the salt not dissolving evenly in the water, Ideally, the experiment would be conducted with the terminals of the power supply affixed onto the container, as opposed to just being clamped down, and with the water stirred well so that the salt would be fully and evenly dissolved into it. Also a voltmeter with higher precision would be useful, since more exact data is better data. Despite the lack of optimization, this experiment shows that saltwater is a reasonable low cost solution for an electrophoresis rig as it can properly construct equipotential regions.
 
 
 
@@ -205,12 +225,15 @@ VK set up and performed experiments, and worked on introduction, formatting, and
 \end{IEEEbiography}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{vchoudhury.jpeg}}]{Vikram Choudhury} is a senior in the Science and Engineering Magnet Program at Manalapan High School. He is also an intern in the Monmouth County Engineering Department, where he experiences the charm and wonder of the bridges of Monmouth County. 
 \end{IEEEbiography}
+\vfill
+\newpage
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{pthaker.jpeg}}]{Pooja Thaker} is a senior in the Science and Engineering Magnet Program at Manalapan High School. Her current senior project examines the biomechanics of plunge diving in kingfishers (family Alcedinidae) using immersed boundary methods. She holds the Manalapan High School record for \numproduct{2 x 2} Rubik's speedcube time. 
 \end{IEEEbiography}
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{nmartin.jpeg}}]{Nathan Martin} is a senior in the Science and Engineering Magnet Program at Manalapan High School. He enjoys the magical world of valuation of user data. 
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{nmartin.jpeg}}]{Nathan Martin} is a senior in the Science and Engineering Magnet Program at Manalapan High School. He loves to work in his internship at WIT sports, exploring the magical world of data science. 
 \end{IEEEbiography}
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{dahmad.jpeg}}]{Danyal Ahmad} is a senior in the Science and Engineering Magnet Program at Manalapan High School. He enjoys NODI, DTI, and the magical world of magentic resonance imaging of the cortico-spinal tract and its relation to movement in patients with compromised nervous systems, as well as preparing databases of articles relating to NODI, DTI, and the magical world of magnetic resonance imaging. 
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{dahmad.jpeg}}]{Danyal Ahmad} is a senior in the Science and Engineering Magnet Program at Manalapan High School. He serves as president of his Civic Leaders of America chapter and vice president at Manalapan High School's National Honor Society. He is also an intern in the Neurophysiology and Rehabilitation Innovations Lab at Rutgers School of Health Professions, assisting research using NODDI and DTI neuroimaging data to study patient cognition and limb function after stroke. 
 \end{IEEEbiography}
+\vfill
 \end{document}
 
 
